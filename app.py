@@ -19,8 +19,8 @@ import os
 import streamlit as st
 
 # ── Path fix so sub-packages resolve correctly when run from project root ─────
-sys.path.insert(0, os.path.dirname(__file__))
-
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config.config import (
     DEFAULT_LLM_PROVIDER,
     DEFAULT_MODEL,
